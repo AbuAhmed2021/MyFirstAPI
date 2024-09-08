@@ -102,7 +102,9 @@ setup_database()
 @app.get("/Customers/")
 async def read_Customers():
     try:
-        conn = sqlite3.connect("aminaDB.db")
+        import os
+        db_path = os.path.join(os.path.dirname(__file__), 'aminaDB.db')
+        conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Customers")
         rows = cursor.fetchall()
