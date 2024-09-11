@@ -27,7 +27,7 @@ class CustomersML(BaseModel):
 
 def setup_database():
     try:
-        conn = sqlite3.connect("/app/aminaDB.db")
+        conn = sqlite3.connect("aminaDB.db")
         cursor = conn.cursor()
         cursor.execute('''
                     CREATE TABLE IF NOT EXISTS Customers(
